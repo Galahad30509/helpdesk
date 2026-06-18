@@ -1,7 +1,7 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
 
-$BASE             = $BASE             ?? '/fromEarth';
+$BASE             = $BASE             ?? '/webreport_repair';
 $page_title       = $page_title       ?? 'ระบบแจ้งซ่อมครุภัณฑ์';
 $brand_title      = $brand_title      ?? "ระบบแจ้งซ่อมครุภัณฑ์\nงานบริหารเทคโนโลยีสารสนเทศ";
 $brand_href       = $brand_href       ?? $BASE . '/user/durable_articles.php';
@@ -40,15 +40,15 @@ $user_display = trim($_SESSION['email'] ?? $_SESSION['display_name'] ?? $_SESSIO
 
     .custom-border th,
     .custom-border td {
-     border: 4px solid orange !important; /* ปรับจาก 1px → 2px หรือมากกว่า */
+      border: 4px solid orange !important;
     }
     .custom-border {
-     border: 4px solid orange !important; /* เส้นรอบนอกของตาราง */
-     border-radius: 8px; /* เพิ่มมุมโค้งมน */ 
+      border: 4px solid orange !important;
+      border-radius: 8px;
     }
     .border-edit{
-      border: 2px solid gray !important; /* เส้นรอบนอกของตาราง */
-     }
+      border: 2px solid gray !important;
+    }
   </style>
 </head>
 <body>

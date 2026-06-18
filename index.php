@@ -127,9 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <img src="assets/logo-mednu.png" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px;">
       <span class="navbar-brand"><h4>ระบบแจ้งซ่อมครุภัณฑ์</h4></span>
     </div>
-    <a href="mix.php">
-      <img src="assets/home(1).png" alt="หน้ารวมระบบ" style="width:28px; height:28px; vertical-align:middle;"> 
-    </a>
+   
   </div>
 </nav>
 

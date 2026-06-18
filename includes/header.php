@@ -1,7 +1,7 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
 
-$BASE             = $BASE             ?? '/fromEarth';
+$BASE             = $BASE             ?? '/webreport_repair';
 $page_title       = $page_title       ?? 'ระบบแจ้งซ่อมครุภัณฑ์';
 $brand_title      = $brand_title      ?? "ระบบแจ้งซ่อมครุภัณฑ์\nงานบริหารเทคโนโลยีสารสนเทศ";
 $brand_href       = $brand_href       ?? $BASE . '/admin/receive_repair_requests.php';
@@ -13,14 +13,13 @@ $brand_clickable  = $brand_clickable  ?? true;
 $logout_next      = $logout_next      ?? ($BASE . '/index.php');
 
 /* ลิงก์หลักของเมนู */
-$LINK_HOME    = $BASE . '/admin/receive_repair_requests.php';
-$LINK_HISTORY = $BASE . '/admin/repair_history.php';
+$LINK_HOME        = $BASE . '/admin/receive_repair_requests.php';
+$LINK_HISTORY     = $BASE . '/admin/repair_history.php';
 $LINK_STATISTICS  = $BASE . '/admin/statistics.php';
-$LINK_CONFIRM = $BASE . '/admin/user_approval.php';
-$LINK_ADMIN   = $BASE . '/admin/';
+$LINK_CONFIRM     = $BASE . '/admin/user_approval.php';
+$LINK_ADMIN       = $BASE . '/admin/';
 
 $user_display = 'admin'; // Default for admin users
-
 ?>
 <!DOCTYPE html>
 <html lang="th">
@@ -43,16 +42,14 @@ $user_display = 'admin'; // Default for admin users
   
     .custom-border th,
     .custom-border td {
-     border: 4px solid orange !important; /* ปรับจาก 1px → 2px หรือมากกว่า */
+      border: 4px solid orange !important;
     }
-
-     .custom-border {
-     border: 2px solid black !important; /* เส้นรอบนอกของตาราง */
-     }
-
-     .border-edit{
-      border: 2px solid gray !important; /* เส้นรอบนอกของตาราง */
-     }
+    .custom-border {
+      border: 2px solid black !important;
+    }
+    .border-edit{
+      border: 2px solid gray !important;
+    }
   </style>
 </head>
 <body>
@@ -84,7 +81,7 @@ $user_display = 'admin'; // Default for admin users
           <li class="nav-item"><a class="nav-link <?= $active_menu==='return'?'active':'' ?>" href="<?= $LINK_STATISTICS ?>"><h5>สถิติ</h5></a></li>
           <li class="nav-item"><a class="nav-link <?= $active_menu==='return'?'active':'' ?>" href="<?= $LINK_CONFIRM ?>"><h5>อนุมัติผู้ใช้</h5></a></li>
           <?php if (($_SESSION['role'] ?? '') === 'admin'): ?>
-            <li class="nav-item"><a class="nav-link <?= $active_menu==='admin-users'?'active':'' ?>" href="<?= $LINK_ADMIN ?>"><h5></h5>จัดการผู้ใช้</a></li>
+            <li class="nav-item"><a class="nav-link <?= $active_menu==='admin-users'?'active':'' ?>" href="<?= $LINK_ADMIN ?>"><h5>จัดการผู้ใช้</h5></a></li>
           <?php endif; ?>
         </ul>
 
@@ -93,11 +90,11 @@ $user_display = 'admin'; // Default for admin users
             <span class="user-chip">👤 <?= htmlspecialchars($user_display) ?></span>
           <?php endif; ?>
           <a href="<?= $BASE ?>/index.php?next=<?= urlencode($logout_next) ?>"
-         class="btn btn-outline-danger logout-btn ms-lg-2"
-         onclick="return confirm('ต้องการออกจากระบบหรือไม่?')">
-         <img src="<?= $BASE ?>/assets/user-logout.png" alt="logout" style="width:22px; height:22px; vertical-align:middle; margin-right:6px;">
-         ออกจากระบบ
-       </a>
+             class="btn btn-outline-danger logout-btn ms-lg-2"
+             onclick="return confirm('ต้องการออกจากระบบหรือไม่?')">
+            <img src="<?= $BASE ?>/assets/user-logout.png" alt="logout" style="width:22px; height:22px; vertical-align:middle; margin-right:6px;">
+            ออกจากระบบ
+          </a>
         </div>
       </div>
 
