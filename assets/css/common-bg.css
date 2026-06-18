@@ -1,0 +1,17 @@
+body {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    background: url('../bg_nu.jpg') center center/cover no-repeat;
+    filter: blur(6px) brightness(1.15) contrast(1.1) saturate(1.1);
+}
+#loginCollapse, .container, nav {
+    position: relative;
+    z-index: 1;
+}

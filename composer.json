@@ -1,0 +1,7 @@
+{
+    "require": {
+        "endroid/qr-code": "^4.6",
+        "phpmailer/phpmailer": "^6.10",
+        "twbs/bootstrap-icons": "^1.13"
+    }
+}
